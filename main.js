@@ -3,7 +3,7 @@ const childProcess = require('child_process');
 const phantomjs = require('phantomjs-prebuilt');
 
 const args = process.argv.slice(2).concat([null]);
-const url = args[0] || 'https://ffmpeg.org/ffmpeg-filters.html';
+const url = args[0] || 'https://ffmpeg.org/donations.html';
 
 const childArgs = [
     path.join(__dirname, './lib/rasterize.js'),
@@ -19,8 +19,6 @@ child.stderr.on('data', (data) => { console.error(`err: ${data}`); });
 child.on('close', (code) => {  
     console.log(`exited with code ${code}`);
     if (code == 0) {
-        // const maker = `${safePath}/make.js`;
-        // fs.write(maker, fs.read('./src/make.template.js'), 'w');
         require('./lib/compile')(url);
     }
 });

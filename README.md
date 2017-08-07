@@ -2,17 +2,21 @@
 
 A running joke that a sufficiently complex AI might pursue instrumental convergence to the point of creating billions of meaningless tutorials for the human underclass.
 
-Rather than implementing such an AI, this package seeks to emulate that behaviour by the following:
+Rather than implementing such an AI, this package seeks to emulate that behaviour in a 48 hour hack which does the following:
 
-- Visit a webpage (phantomJS)
+- Visit a webpage (using phantomJS)
 
 - Take a screenshot (rasterize.js)
+
+- Record the location and text of (almost) every `<a>` on the page
 
 - Generate some random music (scribbletune js, timidity)
 
 - Generate TTS narration (festival js)
 
 - Compile it all into a video with some text (ffmpeg)
+
+- Repeat for each `<a>`, producing short tutorial videos for "how to click" each link. :)
 
 ## Usage
 
@@ -49,7 +53,7 @@ or
 
 The following is default. If you provided a URL in the previous step, this will be different.
 
-`ls -la ./https_ffmpeg_org_ffmpeg_filters_html`
+`ls -la ./https_ffmpeg_org_donations_html`
 
 If you have `jq` installed (`apt-get install jq`): `cat ./1.json | jq '.'`
 
@@ -65,7 +69,8 @@ You can confirm this if you please: `cat 1.json | js '.list | length'`
 
 `node
 	// Substitute this URL if you provided any earlier.
-	const compile = require('./lib/compile')('https://ffmpeg.org/ffmpeg-filters.html')
+	const compile = require('./lib/compile')
+	compile('https://ffmpeg.org/donations.html')
 `
 
 #### Wait patiently
@@ -74,7 +79,7 @@ You can confirm this if you please: `cat 1.json | js '.list | length'`
 
 #### Check for .webm(s) in the directory we created earlier.
 
-`ls -la ./https_ffmpeg_org_ffmpeg_filters_html`
+`ls -la ./https_ffmpeg_org_donations_html`
 
 Done!
 
