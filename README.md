@@ -22,7 +22,7 @@ Rather than implementing such an AI, this package seeks to emulate that behaviou
 
 #### Ensure dependencies are present
 
-`apt-get install timidity festival`
+`apt-get install timidity festival phantomjs`
 
 `npm i`
 
