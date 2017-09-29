@@ -24,6 +24,10 @@ Rather than implementing such an AI, this package seeks to emulate that behaviou
 
 `apt-get install timidity festival`
 
+Also see here for any potential other dependencies for phantom: http://phantomjs.org/download.html 
+
+Also `libfontconfig` or `fontconfig`
+
 `npm i`
 
 ### A. Run main and brace your CPU
