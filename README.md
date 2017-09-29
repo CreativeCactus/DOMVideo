@@ -22,7 +22,7 @@ Rather than implementing such an AI, this package seeks to emulate that behaviou
 
 #### Ensure dependencies are present
 
-`apt-get install timidity festival phantomjs`
+`apt-get install timidity festival`
 
 `npm i`
 
@@ -34,10 +34,7 @@ Rather than implementing such an AI, this package seeks to emulate that behaviou
 
 #### Determine phantomJS path
 
-`node
-	const phantomjs = require('phantomjs-prebuilt');
-	phantomjs.path
-`
+`node --eval "const phantomjs = require('phantomjs-prebuilt'); console.log(phantomjs.path)"`
 
 or 
 
